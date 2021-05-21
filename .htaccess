@@ -2,7 +2,7 @@
 Options -Indexes
 
 RewriteEngine On
-RewriteBase /restapi/
+RewriteBase /
 RewriteRule ^user/([A-Za-z0-9/]+)$ user.php?id=$1    [NC,L]  
 RewriteRule ^deluser/([A-Za-z0-9/]+)$ deluser.php?id=$1    [NC,L]  
 
