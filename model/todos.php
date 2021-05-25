@@ -1,15 +1,13 @@
 <?php 
 
-include_once 'config/database.php';
+require 'config/database.php';
 
 
-class Todos {
-	private $conn;
-
-	public function __construct(){
-		$this->db = new Database();
-		$this->conn = $this->db->getDB();
+class Todos extends Database {
+	
+	public function conexion(){
 		
+		parent::__construct();
 
 	}
 	

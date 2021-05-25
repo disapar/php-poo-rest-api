@@ -8,13 +8,14 @@ class Database
     private $dbuser = "root";
     private $dbpass = "";
     private $dbname = "restapi";
-    private $conn;
+    protected $conn;
 
     public function __construct()
     {
 
         try {
             $this->conn  = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname, $this->dbuser, $this->dbpass);
+
         } catch (PDOException $ex) {
             echo 'Error conectando a la BBDD. ' . $ex->getMessage();
         }
@@ -22,9 +23,6 @@ class Database
 
     }
 
-    public function getDB()
-    {
-        return $this->conn;
-    }
+   
 }
 
