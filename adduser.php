@@ -1,14 +1,18 @@
 <?php
-
+// header('Access-Control-Allow-Origin: *');
+// header('Content-type: json');
+// header('Access-Control-Allow-Headers: *');
 include_once "model/todos.php";
 
+$json = json_decode(file_get_contents('php://input'), true);
 
 
-if(!$_POST['name'] == ""){
-
+	
+if(!$json["name"] == ""){
+	print_r($json);
 $data = new Todos();
 
-$data->upUser($_POST['name'], $_POST['email'],$_POST['doc'], $_POST['gener']);
+$data->upUser($json["name"], $json['email'],$json['doc'], $json['gener']);
 
 }else{
 	echo json_encode('error');

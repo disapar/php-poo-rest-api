@@ -1,0 +1,33 @@
+
+GET http://localhost HTTP/1.1
+
+### Call a user
+
+GET http://localhost/user/6 HTTP/1.1
+
+### Add User
+POST http://localhost/adduser HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "name": "Marcos Rios",
+    "email": "marcosrios@gmail.com",
+    "doc": "30.588.144",
+    "gener": "F"
+}
+
+### Edit user
+POST http://localhost/edituser HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "id": "6",
+    "name": "Marcos Enrique Rios",
+    "email": "marcosrios@gmail.com",
+    "doc": "42.151.555",
+    "gener": "M"
+}
+
+### Delete user
+GET http://localhost/deluser/6 HTTP/1.1
+

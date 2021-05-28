@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-04-2021 a las 18:32:25
+-- Tiempo de generación: 28-05-2021 a las 07:09:49
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.26
 
@@ -37,6 +37,18 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `students`
+--
+
+INSERT INTO `students` (`id`, `name`, `email`, `doc`, `gener`, `day`) VALUES
+(1, 'Micaela', 'micasofia@gmail.com', '44.454.501', 'M', '2021-05-21'),
+(2, 'Federico Videla', 'federicovidelo@gmail.com', '42.454.501', 'M', '2021-04-03'),
+(3, 'Joel Saunder', 'joels@gmail.com', '41.005.128', 'M', '2021-04-03'),
+(4, 'Daiana Gian', 'dnielagian@gmail.com', '33.115.128', 'F', '2021-04-03'),
+(5, 'Roxana Sanders', 'roxana@gmail.com', '44.788.144', 'M', '2021-05-28'),
+(6, 'Marcos Enrique Rios', 'marcosrios@gmail.com', '42.151.555', 'M', '2021-05-28');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -54,7 +66,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT de la tabla `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
