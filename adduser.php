@@ -1,7 +1,7 @@
 <?php
-// header('Access-Control-Allow-Origin: *');
-// header('Content-type: json');
-// header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Origin: *');
+header('Content-type: json');
+header('Access-Control-Allow-Headers: *');
 include_once "model/todos.php";
 
 $json = json_decode(file_get_contents('php://input'), true);
