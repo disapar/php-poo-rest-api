@@ -11,6 +11,6 @@ $data = new Todos();
 $data->delUser($_GET['id']);
 
 }else{
-	echo json_encode('erroneo');
+	echo json_encode('error');
 }
 ?>

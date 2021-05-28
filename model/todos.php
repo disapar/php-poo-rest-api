@@ -5,13 +5,13 @@ require 'config/database.php';
 
 class Todos extends Database {
 	
-	public function conexion(){
+	public function connection(){
 		
 		parent::__construct();
 
 	}
 	
-// llamar todos los registros
+// Call all students
 	public function getUsers()
 	{
 		
@@ -25,7 +25,7 @@ class Todos extends Database {
 		exit;
 
 	}
-// llamar un students
+// call a Student
 	public function getUser($id)
 	{
 		$query = "SELECT * FROM students WHERE id = '$id'";
@@ -46,7 +46,7 @@ class Todos extends Database {
 			die;
 		}
 	}
-	// cargar students
+	// Add Student
 	public function upUser($name, $email, $doc, $gener){
 
 		$day = date("Y-m-d");    
@@ -54,11 +54,11 @@ class Todos extends Database {
 		$query ="INSERT INTO students (name, email, doc, gener, day) values (:name, :email, :doc, :gener, :day)";
 		$resultado = $this->conn->prepare($query);
 		$resultado->execute(array(":name"=>$name, ":email"=>$email, ":doc"=>$doc, ":gener"=>$gener, ":day"=>$day));
-		echo json_encode('datos cargados');
+		echo json_encode('Loaded data');
 		exit;
 	}
 
-	// editar students
+	// Edit student
 	public function editUser($id,$name,$email,$doc, $gener){
 
 		$day = date("Y-m-d");
@@ -66,11 +66,11 @@ class Todos extends Database {
 		$query= "UPDATE students SET  name=:name, email=:email, day=:day, doc=:doc, gener=:gener WHERE id=:id";
 		$result= $this->conn->prepare($query);
 		$result->execute(array(":id"=>$id,":name"=>$name, ":email"=>$email, ":doc"=>$doc,":gener"=>$gener, ":day"=>$day));
-		echo json_encode('Datos actualizados');
+		echo json_encode('Updated data');
 		exit;
 
 	}
-	// borrar students
+	// delete students
 	public function delUser($id){
 	// Comprueba si el usuario existe
 		$query = "SELECT * FROM students WHERE id=$id";

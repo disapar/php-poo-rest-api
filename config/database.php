@@ -17,7 +17,7 @@ class Database
             $this->conn  = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname, $this->dbuser, $this->dbpass);
 
         } catch (PDOException $ex) {
-            echo 'Error conectando a la BBDD. ' . $ex->getMessage();
+            echo 'Error connect with BBDD. ' . $ex->getMessage();
         }
         
 

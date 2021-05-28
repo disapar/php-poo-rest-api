@@ -4,7 +4,7 @@ include_once "model/todos.php";
 
 
 if(!isset($_GET['id'])){
-	echo json_encode('algo salio mal');
+	echo json_encode('something went wrong');
 	exit;
 }
 $data = new Todos();
@@ -16,6 +16,6 @@ if (!empty($rows)) {
 	}
 
 }else{
-	echo json_encode('no hay datos');
+	echo json_encode('there is no data');
 }
 ?>

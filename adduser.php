@@ -11,6 +11,6 @@ $data = new Todos();
 $data->upUser($_POST['name'], $_POST['email'],$_POST['doc'], $_POST['gener']);
 
 }else{
-	echo json_encode('erroneo');
+	echo json_encode('error');
 }
 ?>
