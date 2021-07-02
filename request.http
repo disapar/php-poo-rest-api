@@ -1,12 +1,12 @@
 
-GET http://localhost HTTP/1.1
+GET https://restapi.test HTTP/1.1
 
 ### Call a user
 
-GET http://localhost/user/6 HTTP/1.1
+GET https://restapi.test/user/6 HTTP/1.1
 
 ### Add User
-POST http://localhost/adduser HTTP/1.1
+POST http://restapi.test/adduser HTTP/1.1
 Content-Type: application/json
 
 { 
@@ -17,17 +17,23 @@ Content-Type: application/json
 }
 
 ### Edit user
-POST http://localhost/edituser HTTP/1.1
+POST http://restapi.test/edituser HTTP/1.1
 Content-Type: application/json
 
 { 
-    "id": "6",
-    "name": "Marcos Enrique Rios",
-    "email": "marcosrios@gmail.com",
-    "doc": "42.151.555",
-    "gener": "M"
+    "id": "5",
+    "name": "Roxana Sanders",
+    "email": "roxana@gmail.com",
+    "doc": "44.788.144",
+    "gener": "F"
 }
 
 ### Delete user
-GET http://localhost/deluser/6 HTTP/1.1
+GET http://localhost/restapi/deluser/6 HTTP/1.1
 
+### test aparte
+POST https://api.mercadopago.com/users/test_user
+Content-Type: application/json
+Authorization: qsUZ9sH1F4dqUAmCQXXzNklKbhypHFxB
+
+{"site_id":"ARG"}

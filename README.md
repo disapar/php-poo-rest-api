@@ -2,7 +2,7 @@
 
 Simple API in PHP MYSQL developed with the purpose of demonstrating the operation obtaining information and JSON and processing them from any platform.
 
-### MicroService / Requests
+### Requests
 
 **Request all Users**
 

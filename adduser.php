@@ -12,7 +12,7 @@ if(!$json["name"] == ""){
 	print_r($json);
 $data = new Todos();
 
-$data->upUser($json["name"], $json['email'],$json['doc'], $json['gener']);
+$data->agregarComercio($json["name"], $json['email'],$json['doc'], $json['gener']);
 
 }else{
 	echo json_encode('error');

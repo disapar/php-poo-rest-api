@@ -10,7 +10,7 @@ class Database
     private $dbname = "restapi";
     protected $conn;
 
-    public function __construct()
+    public function connect()
     {
 
         try {

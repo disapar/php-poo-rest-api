@@ -1,13 +1,13 @@
 <?php 
 
-require 'config/database.php';
+require_once 'config/database.php';
 
 
 class Todos extends Database {
 	
-	public function connection(){
+	public function __construct(){
 		
-		parent::__construct();
+		parent::connect();
 
 	}
 	
@@ -16,10 +16,10 @@ class Todos extends Database {
 	{
 		
 		$query = "SELECT * FROM students  ORDER BY id DESC";;
-		$resultado = $this->conn->prepare($query);
-		$resultado->execute();
+		$consult = $this->conn->prepare($query);
+		$consult->execute();
 
-		$datos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+		$datos = $consult->fetchAll(PDO::FETCH_ASSOC);
 
 		echo json_encode($datos);
 		exit;
@@ -28,6 +28,7 @@ class Todos extends Database {
 // call a Student
 	public function getUser($id)
 	{
+		
 		$query = "SELECT * FROM students WHERE id = '$id'";
 		$consult = $this->conn->prepare($query);
 		$consult->execute(array());
@@ -35,25 +36,24 @@ class Todos extends Database {
 
 		if ($count == 0 ) {
 			echo json_encode('The student is not exist');
-			die;
+			exit;
 		}else{
 
 			$query = "SELECT * FROM students WHERE id= '$id'";
-			$resultado = $this->conn->prepare($query);
-			$resultado->execute();
-			$datos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+			$consult = $this->conn->prepare($query);
+			$consult->execute();
+			$datos = $consult->fetchAll(PDO::FETCH_ASSOC);
 			echo json_encode($datos);
-			die;
+			exit;
 		}
 	}
 	// Add Student
 	public function upUser($name, $email, $doc, $gener){
-
 		$day = date("Y-m-d");    
 		
 		$query ="INSERT INTO students (name, email, doc, gener, day) values (:name, :email, :doc, :gener, :day)";
-		$resultado = $this->conn->prepare($query);
-		$resultado->execute(array(":name"=>$name, ":email"=>$email, ":doc"=>$doc, ":gener"=>$gener, ":day"=>$day));
+		$consult = $this->conn->prepare($query);
+		$consult->execute(array(":name"=>$name, ":email"=>$email, ":doc"=>$doc, ":gener"=>$gener, ":day"=>$day));
 		echo json_encode('Loaded data');
 		exit;
 	}
