@@ -48,7 +48,11 @@ class Todos extends Database {
 		}
 	}
 	// Add Student
-	public function upUser($name, $email, $doc, $gener){
+	public function addUser($mname,$memail,$mdoc,$mgener){
+		$name=addslashes($mname);
+		$email=addslashes($memail);
+		$doc=addslashes($mdoc);
+		$gener=addslashes($mgener);
 		$day = date("Y-m-d");    
 		
 		$query ="INSERT INTO students (name, email, doc, gener, day) values (:name, :email, :doc, :gener, :day)";
@@ -59,8 +63,12 @@ class Todos extends Database {
 	}
 
 	// Edit student
-	public function editUser($id,$name,$email,$doc, $gener){
-
+	public function editUser($mid,$mname,$memail,$mdoc,$mgener){
+		$id=addslashes($mid);
+		$name=addslashes($mname);
+		$email=addslashes($memail);
+		$doc=addslashes($mdoc);
+		$gener=addslashes($mgener);
 		$day = date("Y-m-d");
 
 		$query= "UPDATE students SET  name=:name, email=:email, day=:day, doc=:doc, gener=:gener WHERE id=:id";
