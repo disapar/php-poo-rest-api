@@ -15,7 +15,7 @@ class Todos extends Database {
 	public function getUsers()
 	{
 		
-		$query = "SELECT * FROM students  ORDER BY id DESC";;
+		$query = "SELECT * FROM students  ORDER BY id DESC";
 		$consult = $this->conn->prepare($query);
 		$consult->execute();
 
@@ -26,9 +26,9 @@ class Todos extends Database {
 
 	}
 // call a Student
-	public function getUser($id)
+	public function getUser($ide)
 	{
-		
+		$id = addslashes($ide);
 		$query = "SELECT * FROM students WHERE id = '$id'";
 		$consult = $this->conn->prepare($query);
 		$consult->execute(array());
@@ -71,7 +71,8 @@ class Todos extends Database {
 
 	}
 	// delete students
-	public function delUser($id){
+	public function delUser($ide){
+		$id = addslashes($ide);
 	// Comprueba si el usuario existe
 		$query = "SELECT * FROM students WHERE id=$id";
 
